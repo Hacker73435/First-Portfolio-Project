@@ -1,37 +1,27 @@
-// Typing Effect Text
-const text = "Hello, I'm Arslan Brall";
+// ===== TYPING EFFECT =====
+const text = "Cybersecurity Enthusiast";
 let i = 0;
 
-function typing(){
-    if(i < text.length){
-        document.querySelector(".typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing,100);
-    }
+function typing() {
+  if (i < text.length) {
+    document.querySelector(".typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 100);
+  }
 }
 typing();
 
-// Particle Background
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+// ===== SIMPLE SCROLL ANIMATION =====
+window.addEventListener("scroll", () => {
+  let sections = document.querySelectorAll(".section");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 400;
 
-let particles = [];
-
-for(let i=0;i<80;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*3
-    });
-}
-
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle="#00ffff";
-    particles.forEach(p=>{
-        ctx.beginPath();
-setInterval(draw,30);
+    if (top > offset) {
+      sec.style.opacity = 1;
+      sec.style.transform = "translateY(0)";
+    }
+  });
+});
