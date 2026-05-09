@@ -1,131 +1,56 @@
-/* ===== GLOBAL ===== */
+/* GLOBAL */
 body {
   margin: 0;
   font-family: Arial;
-  background: #0a0a0a;
-  color: #fff;
+  background: #0a0f1a;
+  color: white;
   scroll-behavior: smooth;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 50px;
-  background: #111;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s ease;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.navbar ul li {
-  margin: 0 15px;
-}
-
-.navbar ul li a {
-  color: #0f0;
-  text-decoration: none;
+/* CARDS */
+.card, .skill-card, .project-card, .cert-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #00e5ff;
+  padding: 20px;
+  border-radius: 12px;
   transition: 0.3s;
 }
 
-.navbar ul li a:hover {
-  color: cyan;
+.card:hover, .skill-card:hover, .project-card:hover, .cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #00e5ff;
 }
 
-/* ===== HERO ===== */
-.hero {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: radial-gradient(circle, #111, #000);
-}
-
-.hero h1 span {
-  color: #0f0;
-}
-
-.typing {
-  color: cyan;
-  font-size: 22px;
-}
-
-/* ===== BUTTON ===== */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: 1px solid #0f0;
-  color: #0f0;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #0f0;
-  color: black;
-  box-shadow: 0 0 15px #0f0;
-}
-
-/* ===== SECTIONS ===== */
-.section {
-  padding: 60px;
-  text-align: center;
-}
-
-/* ===== SKILLS ===== */
-.skill {
-  width: 60%;
-  margin: auto;
-  text-align: left;
-}
-
-.bar {
-  width: 100%;
-  background: #222;
-  height: 10px;
-  margin-bottom: 15px;
-}
-
-.fill {
-  height: 10px;
-  background: #0f0;
-}
-
-.html { width: 90%; }
-.css { width: 85%; }
-.js { width: 75%; }
-.cyber { width: 80%; }
-
-/* ===== CARDS ===== */
-.cards {
-  display: flex;
-  justify-content: center;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
 }
 
-.card {
-  padding: 20px;
-  border: 1px solid #0f0;
-  width: 200px;
-  transition: 0.3s;
+/* HEADINGS */
+h2 {
+  color: #00e5ff;
 }
 
-.card:hover {
-  box-shadow: 0 0 20px #0f0;
-  transform: scale(1.05);
+/* LINKS */
+a {
+  color: #00ff88;
+  text-decoration: none;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
+a:hover {
+  color: #00e5ff;
 }
